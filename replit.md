@@ -13,11 +13,13 @@ This is a static website showcasing an AI Education Suite Demo System. It featur
 - **Dynamic Testing**: Adaptive assessment platform (external iframe)
 - **AI Chat Assistant**: Full-featured chat interface with:
   - User authentication (hardcoded demo credentials)
+  - Role-based system prompts (Teacher vs Student modes)
   - WebSocket-based streaming responses
-  - Markdown rendering support
+  - Markdown rendering with HTML sanitization
   - Bot selection (i-science / AI)
   - Theme toggle (light/dark mode)
   - Real-time message streaming
+  - EOT token handling for response completion
 - Animated background with floating particles and grid overlay
 - Glass morphism design with Frutiger Aero-style aesthetics
 - Sidebar navigation for switching between different education products
@@ -30,6 +32,9 @@ This is a static website showcasing an AI Education Suite Demo System. It featur
 - Responsive design
 
 ## Recent Changes
+- Implemented role-based system prompts for Teacher/Student modes (Nov 14, 2025)
+- Added EOT token handling to stop streaming responses (Nov 14, 2025)
+- Removed demo credentials display from login screen (Nov 14, 2025)
 - Added AI Chat Assistant feature with WebSocket-based streaming chat (Nov 14, 2025)
 - Created `chat.html` with login, chat interface, and markdown rendering (Nov 14, 2025)
 - Integrated with external backend API at globalknowledgetech.com (Nov 14, 2025)
