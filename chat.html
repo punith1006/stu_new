@@ -394,6 +394,22 @@
             
             ws.onmessage = function(event) {
                 const chunk = event.data;
+                
+                // Check if chunk contains <EOT> token
+                if (chunk.includes('<EOT>')) {
+                    // Add only the part before <EOT>
+                    const beforeEOT = chunk.split('<EOT>')[0];
+                    fullResponse += beforeEOT;
+                    updateMessage(assistantMessageId, fullResponse);
+                    ws.close();
+                    return;
+                }
+                
+                // Check if fullResponse already contains <EOT>
+                if (fullResponse.includes('<EOT>')) {
+                    return;
+                }
+                
                 fullResponse += chunk;
                 
                 // Update message with streaming content
